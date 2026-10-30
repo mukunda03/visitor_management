@@ -1,17 +1,41 @@
-# visitor_management
+# Visitor Management App
 
-A new Flutter project.
+A Flutter app for registering visitors, generating QR passes, and tracking check-in and check-out.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- Dashboard with today's visitor stats
+- Register, edit, and delete visitors
+- Search visitors by name or mobile number
+- QR code for each visitor
+- QR scanner to look up visitors
+- Check-in and check-out tracking
 
-A few resources to get you started if this is your first Flutter project:
+## State Management
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- **BLoC** (`flutter_bloc`)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Architecture
+
+Clean Architecture with three layers:
+
+```
+lib/
+├── core/           # config, constants, theme, errors
+├── data/           # datasources, models, repository impl
+├── domain/         # entities, repository contract, use cases
+└── presentation/   # bloc, screens, widgets
+```
+
+## Run
+
+```bash
+flutter pub get
+flutter run --dart-define-from-file=config/dev.json
+```
+
+## Screenshots
+
+| Dashboard | Visitor List | Visitor Details | QR Scanner |
+| :-------: | :----------: | :-------------: | :--------: |
+| <img src="screenshots/dashboard.png" width="200"/> | <img src="screenshots/visitor_list.png" width="200"/> | <img src="screenshots/visitor_details.png" width="200"/> | <img src="screenshots/scanner.png" width="200"/> |
