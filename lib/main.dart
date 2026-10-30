@@ -12,7 +12,7 @@ import 'package:visitor_management/domain/usecases/get_visitors.dart';
 import 'package:visitor_management/domain/usecases/update_visitor.dart';
 import 'package:visitor_management/presentation/bloc/visitor_bloc.dart';
 import 'package:visitor_management/presentation/bloc/visitor_event.dart';
-import 'package:visitor_management/presentation/bloc/visitor_state.dart';
+import 'package:visitor_management/presentation/screens/home_shell.dart';
 
 void main() {
   final repository = VisitorRepositoryImpl(VisitorLocalDatasource());
@@ -39,24 +39,7 @@ class MyApp extends StatelessWidget {
         title: AppStrings.appName,
         debugShowCheckedModeBanner: false,
         theme: AppTheme.light,
-        home: Scaffold(
-          appBar: AppBar(title: Text(AppStrings.appName)),
-          body: BlocBuilder<VisitorBloc, VisitorState>(
-            builder: (context, state) {
-              if (state.status == LoadStatus.loading) {
-                return const Center(child: CircularProgressIndicator());
-              }
-              return Center(
-                child: Text(
-                  'Total today : ${state.totalToday}\n'
-                  'checkedIn today : ${state.checkedInCount}\n'
-                  'checkedOut today : ${state.checkedOutToday}',
-                  textAlign: TextAlign.center,
-                ),
-              );
-            },
-          ),
-        ),
+        home: const HomeShell(),
       ),
     );
   }
