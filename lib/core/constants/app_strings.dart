@@ -74,4 +74,6 @@ class AppStrings {
   static const String notCheckedIn = 'Visitor has not checked in yet';
   static const String visitCompleted = 'Visit is already completed';
   static const String retry = 'Retry';
+
+  static const String visitorIdLabel = 'Visitor ID';
 }
