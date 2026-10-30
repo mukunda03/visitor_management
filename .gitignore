@@ -46,3 +46,26 @@ app.*.map.json
 
 # Widget Preview related
 .widget_preview/
+
+# Environment config (contains API keys / secrets)
+# Keep config/example.json committed as a template.
+/config/*.json
+!/config/example.json
+.env
+.env.*
+!.env.example
+*.env
+
+# Firebase / Google services config
+google-services.json
+GoogleService-Info.plist
+.firebaserc
+firebase-debug.log
+
+# Android signing (never commit keystores)
+key.properties
+*.keystore
+*.jks
+
+# FVM (Flutter Version Management) local SDK link
+.fvm/flutter_sdk
