@@ -76,4 +76,7 @@ class AppStrings {
   static const String retry = 'Retry';
 
   static const String visitorIdLabel = 'Visitor ID';
+  static const String cameraPermissionHint =
+      'Enable camera access in app settings, then tap Retry.';
+  static const String cameraError = 'Unable to start the camera.';
 }
