@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:visitor_management/core/constants/app_strings.dart';
 import 'package:visitor_management/core/theme/app_theme.dart';
-import 'package:visitor_management/data/datasources/visitor_local_datasource.dart';
+import 'package:visitor_management/data/datasources/visitor_remote_datasource.dart';
 import 'package:visitor_management/data/repositories/visitor_repository_impl.dart';
 import 'package:visitor_management/domain/repositories/visitor_repository.dart';
 import 'package:visitor_management/domain/usecases/add_visitors.dart';
@@ -16,7 +16,7 @@ import 'package:visitor_management/presentation/bloc/visitor_event.dart';
 import 'package:visitor_management/presentation/screens/home_shell.dart';
 
 void main() {
-  final repository = VisitorRepositoryImpl(VisitorLocalDatasource());
+  final repository = VisitorRepositoryImpl(VisitorRemoteDatasource());
   runApp(MyApp(repository: repository));
 }
 
